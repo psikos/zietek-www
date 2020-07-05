@@ -1,0 +1,19 @@
+{
+  "name": "zietek_new_www",
+  "version": "1.0.0",
+  "description": "PHU Zietek new site",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "psikos",
+  "license": "ISC"
+}
