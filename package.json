@@ -9,7 +9,8 @@
     "node-sass": "^4.14.1"
   },
   "devDependencies": {
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "prettier": "2.0.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
