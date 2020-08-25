@@ -19,23 +19,29 @@ let visibleElement = 0;
 
 listOfImages[visibleElement].classList.add("visible");
 
-const handlePrev = (event) => {
-  listOfImages[visibleElement].classList.remove("visible");
-  visibleElement--;
-  if (visibleElement < 0) {
-    visibleElement = listOfImages.length - 1;
+//funkcja dopowiadająca za zmienianie się obrazków w sliderach. przyjmuje argument dodatni lub ujemny
+const handleMovingPics = (move, listOfElements, visibleElem, className) => {
+  listOfElements[visibleElem].classList.remove(className);
+
+  if (move === -1) {
+    visibleElem = visibleElem + move;
+    if (visibleElem < 0) {
+      visibleElem = listOfElements.length - 1;
+    }
+    listOfElements[visibleElem].classList.add(className);
+  } else if (move === 1) {
+    visibleElem = visibleElem + move;
+    if (visibleElem > listOfElements.length - 1) {
+      visibleElem = 0;
+    }
+    listOfElements[visibleElem].classList.add(className);
   }
-  listOfImages[visibleElement].classList.add("visible");
+  return visibleElem;
 };
-const handleNext = (event) => {
-  listOfImages[visibleElement].classList.remove("visible");
-  visibleElement++;
-  if (visibleElement > listOfImages.length - 1) {
-    visibleElement = 0;
-  }
-  listOfImages[visibleElement].classList.add("visible");
-};
-const idInterwalu = window.setInterval(handleNext, 3500);
+
+const intervalId = setInterval(() => {
+  visibleElement = handleMovingPics(1, listOfImages, visibleElement, "visible");
+}, 3500);
 
 //slider2
 
@@ -47,21 +53,23 @@ let visibleElement2 = 0;
 
 listOfImages2[visibleElement2].classList.add("visible2");
 
-const handlePrev2 = (event) => {
-  listOfImages2[visibleElement2].classList.remove("visible2");
-  visibleElement2--;
-  if (visibleElement2 < 0) {
-    visibleElement2 = listOfImages.length - 1;
-  }
-  listOfImages2[visibleElement2].classList.add("visible2");
-};
-const handleNext2 = (event) => {
-  listOfImages2[visibleElement2].classList.remove("visible2");
-  visibleElement2++;
-  if (visibleElement2 > listOfImages2.length - 1) {
-    visibleElement2 = 0;
-  }
-  listOfImages2[visibleElement2].classList.add("visible2");
-};
-prev.addEventListener("click", handlePrev2);
-next.addEventListener("click", handleNext2);
+prev.addEventListener(
+  "click",
+  () =>
+    (visibleElement2 = handleMovingPics(
+      -1,
+      listOfImages2,
+      visibleElement2,
+      "visible2"
+    ))
+);
+next.addEventListener(
+  "click",
+  () =>
+    (visibleElement2 = handleMovingPics(
+      1,
+      listOfImages2,
+      visibleElement2,
+      "visible2"
+    ))
+);

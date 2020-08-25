@@ -1,12 +1,13 @@
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const sections = document.querySelectorAll("section");
+const articles = document.querySelectorAll("article");
 
-sections.forEach((section) => {
+articles.forEach((article) => {
   gsap.fromTo(
-    section.children,
+    article.children,
     { y: "+=100", opacity: 0 },
     {
       y: 0,
@@ -15,8 +16,8 @@ sections.forEach((section) => {
       duration: 1,
       ease: "easeInOut",
       scrollTrigger: {
-        trigger: section,
-        start: "top 20%",
+        trigger: article,
+        start: "top 40%",
       },
     }
   );
