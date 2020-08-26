@@ -22,20 +22,20 @@ listOfImages[visibleElement].classList.add("visible");
 //funkcja dopowiadająca za zmienianie się obrazków w sliderach. przyjmuje argument dodatni lub ujemny
 const handleMovingPics = (move, listOfElements, visibleElem, className) => {
   listOfElements[visibleElem].classList.remove(className);
+  visibleElem = visibleElem + move;
 
   if (move === -1) {
-    visibleElem = visibleElem + move;
     if (visibleElem < 0) {
       visibleElem = listOfElements.length - 1;
     }
-    listOfElements[visibleElem].classList.add(className);
   } else if (move === 1) {
-    visibleElem = visibleElem + move;
     if (visibleElem > listOfElements.length - 1) {
       visibleElem = 0;
     }
-    listOfElements[visibleElem].classList.add(className);
   }
+
+  listOfElements[visibleElem].classList.add(className);
+
   return visibleElem;
 };
 
@@ -73,3 +73,58 @@ next.addEventListener(
       "visible2"
     ))
 );
+
+// formularz
+
+const submit = document.querySelector(".submit");
+const name = document.querySelector("#name");
+const email = document.querySelector("#email");
+const message = document.querySelector("#message");
+const statusElem = document.querySelector(".status");
+console.log(statusElem);
+
+const divMaker = (message, parentElement) => {
+  const emailMessage = document.createElement("div");
+  emailMessage.innerHTML = message;
+  parentElement.appendChild(emailMessage);
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  statusElem.innerHTML = "";
+  const nameValue = name.value;
+  const emailValue = email.value;
+  const messageValue = message.value;
+  // statusElem.empty();
+  console.log(messageValue);
+
+  if (nameValue.length > 2) {
+    divMaker("Imię ok.", statusElem);
+  } else {
+    event.preventDefault();
+    divMaker("Imię za krótkie.", statusElem);
+  }
+
+  if (
+    emailValue.length > 5 &&
+    emailValue.includes("@") &&
+    emailValue.includes(".")
+  ) {
+    divMaker("Poprawny email.", statusElem);
+  } else {
+    event.preventDefault();
+    divMaker("Niepoprawny email.", statusElem);
+  }
+
+  if (messageValue.length > 20 && messageValue.length < 300) {
+    divMaker("Wiadomość ok.", statusElem);
+  } else {
+    divMaker(
+      event.preventDefault();
+      "Wiadomość powinna mieć nie mniej niż 20 i nie więcej niż 300 znaków.",
+      statusElem
+    );
+  }
+};
+
+submit.addEventListener("click", handleSubmit);

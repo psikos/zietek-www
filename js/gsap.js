@@ -17,7 +17,7 @@ articles.forEach((article) => {
       ease: "easeInOut",
       scrollTrigger: {
         trigger: article,
-        start: "top 40%",
+        start: "top 50%",
       },
     }
   );
