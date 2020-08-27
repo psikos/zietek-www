@@ -119,8 +119,8 @@ const handleSubmit = (event) => {
   if (messageValue.length > 20 && messageValue.length < 300) {
     divMaker("Wiadomość ok.", statusElem);
   } else {
+    event.preventDefault();
     divMaker(
-      event.preventDefault();
       "Wiadomość powinna mieć nie mniej niż 20 i nie więcej niż 300 znaków.",
       statusElem
     );
