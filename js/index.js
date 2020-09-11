@@ -81,7 +81,6 @@ const name = document.querySelector("#name");
 const email = document.querySelector("#email");
 const message = document.querySelector("#message");
 const statusElem = document.querySelector(".status");
-console.log(statusElem);
 
 const divMaker = (message, parentElement) => {
   const emailMessage = document.createElement("div");
@@ -95,13 +94,14 @@ const handleSubmit = (event) => {
   const nameValue = name.value;
   const emailValue = email.value;
   const messageValue = message.value;
-  // statusElem.empty();
-  console.log(messageValue);
+
+  let isValid = false;
 
   if (nameValue.length > 2) {
-    divMaker("Imię ok.", statusElem);
+    isValid = true;
   } else {
     event.preventDefault();
+    isValid = false;
     divMaker("Imię za krótkie.", statusElem);
   }
 
@@ -110,21 +110,25 @@ const handleSubmit = (event) => {
     emailValue.includes("@") &&
     emailValue.includes(".")
   ) {
-    divMaker("Poprawny email.", statusElem);
+    isValid = true;
   } else {
     event.preventDefault();
+    isValid = false;
     divMaker("Niepoprawny email.", statusElem);
   }
 
   if (messageValue.length > 20 && messageValue.length < 300) {
-    divMaker("Wiadomość ok.", statusElem);
+    isValid = true;
   } else {
     event.preventDefault();
+    isValid = false;
     divMaker(
       "Wiadomość powinna mieć nie mniej niż 20 i nie więcej niż 300 znaków.",
       statusElem
     );
   }
+
+  isValid ? divMaker("Wiadomość wysłana.", statusElem) : null;
 };
 
 submit.addEventListener("click", handleSubmit);
