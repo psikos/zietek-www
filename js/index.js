@@ -89,7 +89,6 @@ const divMaker = (message, parentElement) => {
 };
 
 const handleSubmit = (event) => {
-  event.preventDefault();
   statusElem.innerHTML = "";
   const nameValue = name.value;
   const emailValue = email.value;
@@ -127,16 +126,6 @@ const handleSubmit = (event) => {
       statusElem
     );
   }
-
-  // if (isValid) {
-  //   window.formbutton =
-  //     window.formbutton ||
-  //     function () {
-  //       (formbutton.q = formbutton.q || []).push(arguments);
-  //     };
-  //   formbutton("create", { action: "https://formspree.io/xwkrdkko" });
-  //   divMaker("Wiadomość wysłana.", statusElem);
-  // }
 
   isValid ? divMaker("Wiadomość wysłana.", statusElem) : null;
 };
