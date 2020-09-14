@@ -128,6 +128,16 @@ const handleSubmit = (event) => {
     );
   }
 
+  // if (isValid) {
+  //   window.formbutton =
+  //     window.formbutton ||
+  //     function () {
+  //       (formbutton.q = formbutton.q || []).push(arguments);
+  //     };
+  //   formbutton("create", { action: "https://formspree.io/xwkrdkko" });
+  //   divMaker("Wiadomość wysłana.", statusElem);
+  // }
+
   isValid ? divMaker("Wiadomość wysłana.", statusElem) : null;
 };
 
