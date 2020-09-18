@@ -1,9 +1,4 @@
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-const articles = document.querySelectorAll("article");
+const articles = document.querySelectorAll("article ul");
 
 articles.forEach((article) => {
   gsap.fromTo(
@@ -13,7 +8,7 @@ articles.forEach((article) => {
       y: 0,
       opacity: 1,
       stagger: 0.2,
-      duration: 1,
+      duration: 0.3,
       ease: "easeInOut",
       scrollTrigger: {
         trigger: article,
