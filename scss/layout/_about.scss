@@ -1,0 +1,85 @@
+.about {
+    @include box-shadow;
+    padding: $main-padding * 2 $main-padding;
+
+    .about-content {
+        h2 {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: $main-padding;
+            position: relative;
+            opacity: 60%;
+
+            @include tabletLandscape {
+                text-align: initial;
+
+            }
+            @include desktop {
+                text-align: initial;
+            }
+        }
+
+        @include tabletLandscape {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .about-paragraphs {
+        text-align: justify;
+        font-weight: 300;
+        word-spacing: 0.1rem;
+        letter-spacing: 0.04rem;
+        line-height: 1.4rem;
+        opacity: 80%;
+
+        p {
+            margin-bottom: $main-padding;
+        }
+    }
+
+    img {
+        width: 80%;
+
+        @include tabletLandscape {
+            width: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+        @include desktop {
+            width: 100%;
+            object-fit: contain;
+            object-position: bottom;
+        }
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        
+        @include tabletLandscape {
+            flex: 1;
+        }
+        @include desktop {
+            flex: 1;
+        }
+    }
+
+    .about-text {
+        @include tabletLandscape {
+            flex: 2;
+            margin-right: $main-padding;
+        }
+        @include desktop {
+            flex: 2;
+            margin-right: $main-padding;
+        }
+    }
+
+
+}

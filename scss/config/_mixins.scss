@@ -1,0 +1,133 @@
+@mixin mobile {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin smallMobile {
+  @media screen and (max-width: 410px) {
+    @content;
+  }
+}
+@mixin largeMobile {
+  @media screen and (min-width: 361px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin largeMobileFrom425px {
+  @media screen and (min-width: 425px) {
+    @content;
+  }
+}
+
+@mixin largeMobileFrom527px {
+  @media screen and (min-width: 527px) {
+    @content;
+  }
+}
+
+@mixin largeMobileFrom528px {
+  @media screen and (min-width: 528px) {
+    @content;
+  }
+}
+
+@mixin largeMobile598px {
+  @media screen and (min-width: 598px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin largeMobileFrom744px {
+  @media screen and (min-width: 744px) {
+    @content;
+  }
+}
+
+@mixin largeMobileFrom867px {
+  @media screen and (min-width: 867px) {
+    @content;
+  }
+}
+
+@mixin largeMobileFrom885px {
+  @media screen and (min-width: 885px) {
+    @content;
+  }
+}
+
+@mixin tabletLandscape {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tabletLandscapeAllOver {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin AllOver840px {
+  @media only screen and (min-width: 840px) {
+    @content;
+  }
+}
+
+@mixin tabletLandscapeAndMinHeight {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 616px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 2px 9px -2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 2px 9px -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 9px -2px rgba(0, 0, 0, 0.25);
+}
+@mixin box-shadow2 {
+  -webkit-box-shadow: 0px 0px 50px -11px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 50px -11px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 50px -11px rgba(0, 0, 0, 0.15);
+}
+
+@mixin text-shadow {
+  text-shadow: 0px 5px 9px rgba(0, 0, 0, 0.33);
+}
+
+@mixin text-shadow2 {
+  text-shadow: 2px 2px 0px darken($third-main-color, 30%);
+}
+
+@mixin noHighlight {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin arrow($color, $direction, $size) {
+  display: block;
+  height: 0;
+  width: 0;
+
+  @if $direction == "right" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if $direction == "left" {
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+}

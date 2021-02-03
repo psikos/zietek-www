@@ -1,0 +1,62 @@
+.header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: $main-background-color;
+
+  @include box-shadow;
+
+  @include tabletLandscapeAllOver {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: $main-padding;
+  height: 10vh;
+}
+
+// .logo {
+//   font-size: 1.5rem;
+//   font-weight: 800;
+//   font-style: italic;
+//   padding: 0.8rem;
+//   border-radius: 3px;
+//   background-color: $main-color;
+//   color: $second-main-color;
+//   margin-right: $main-padding;
+// }
+
+.logo {
+  height: 12vh;
+  background-color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+  margin-right: $main-padding / 3;
+  z-index: 100;
+
+  @include box-shadow;
+  img {
+    object-fit: cover;
+    object-position: bottom;
+    max-height: 11vh;
+    padding: 1vh;
+    margin-top: 1vh;
+  }
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+
+  @include noHighlight;
+}

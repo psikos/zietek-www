@@ -1,0 +1,90 @@
+a.button {
+  text-decoration: none;
+  padding: $main-padding $main-padding * 2;
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+  background-color: $second-main-color;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  margin: $main-padding / 2;
+
+  @include box-shadow;
+}
+
+.zadzwon-button {
+  background-color: $main-color;
+}
+
+.wywoz-button,
+.sklad-opalu-button,
+.mechanika-button {
+  cursor: pointer;
+  z-index: 10;
+}
+
+.buttons .mechanika-button {
+  background-color: darken($main-color, 35%);
+}
+
+.mechanika-button:hover {
+  background-color: darken($main-color, 45%);
+}
+
+.buttons .sklad-opalu-button {
+  background-color: darken($third-main-color, 28%);
+}
+
+.sklad-opalu-button:hover {
+  background-color: darken($third-main-color, 38%);
+}
+
+.buttons .wywoz-button {
+  background-color: darken($second-main-color, 0%);
+}
+
+.wywoz-button:hover {
+  background-color: darken($second-main-color, 5%);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  align-items: center;
+
+  @include noHighlight;
+
+  @include tabletLandscapeAndMinHeight {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: space-between;
+  a {
+    margin: $main-padding;
+    opacity: 50%;
+
+    &:first-of-type {
+      @include arrow(lighten($second-main-color, 20%), "left", 20px);
+    }
+    &:last-of-type {
+      @include arrow(lighten($second-main-color, 20%), "right", 20px);
+    }
+    &:first-of-type:hover {
+      @include arrow($second-main-color, "left", 20px);
+    }
+    &:last-of-type:hover {
+      @include arrow($second-main-color, "right", 20px);
+    }
+  }
+
+  @include tabletLandscapeAllOver {
+    display: none;
+  }
+}

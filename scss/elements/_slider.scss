@@ -1,0 +1,46 @@
+.slider {
+  height: 200px;
+  width: 100%;
+}
+.slider ul {
+  list-style: none;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slider li {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  height: 100%;
+  bottom: 0;
+  img {
+    height: 100%;
+    width: auto;
+
+    @include tabletLandscapeAllOver {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.slider .visible {
+  opacity: 1;
+}
+
+//slider w wywozie
+.elem {
+  display: none;
+
+  @include tabletLandscapeAllOver {
+    display: initial;
+    // align-self: center;
+  }
+}
+
+.visible2 {
+  display: inline-block;
+}

@@ -1,0 +1,31 @@
+.cookie {
+  padding: $main-padding;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  bottom: 0;
+  background-color: $main-color;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 85%;
+  z-index: 150;
+
+  button {
+    display: block;
+    background-color: darken($main-color, 10%);
+    border: none;
+    font-weight: 600;
+    padding: $main-padding / 2 $main-padding;
+    margin-left: $main-padding;
+    outline: none;
+
+    &:hover {
+      background-color: darken($main-color, 20%);
+    }
+  }
+}
+
+.clicked {
+  display: none;
+}

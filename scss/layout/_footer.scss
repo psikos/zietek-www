@@ -1,0 +1,138 @@
+.footer {
+  background-color: darken($footer-main-color, 20%);
+  color: lighten($footer-main-color, 10%);
+  padding: $main-padding;
+
+  @include tabletLandscapeAllOver {
+  }
+  .logo {
+    padding: 0;
+  }
+
+  .logo,
+  h3 {
+    color: lighten($footer-main-color, 30%);
+    font-size: 1.2rem;
+    background-color: transparent;
+    margin: $main-padding 0 $main-padding * 2;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    width: 50%;
+    margin: $main-padding * 2 $main-padding $main-padding;
+    background-color: $footer-main-color;
+    display: block;
+
+    @include tabletLandscapeAllOver {
+      display: none;
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tabletLandscapeAllOver {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.footer-column {
+  text-align: center;
+  width: 100%;
+
+  @include tabletLandscapeAllOver {
+    text-align: initial;
+  }
+}
+
+.first {
+  flex: 2;
+
+  p {
+    line-height: 1.8rem;
+    font-weight: 300;
+  }
+}
+.third {
+  flex: 3;
+}
+
+.fourth {
+  flex: 2;
+}
+
+.first,
+.second {
+  display: none;
+
+  @include tabletLandscapeAllOver {
+    display: initial;
+  }
+}
+
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include tabletLandscapeAllOver {
+    justify-content: flex-start;
+  }
+
+  li {
+    font-weight: 300;
+    border: 1px solid $footer-main-color;
+    padding: $main-padding * 0.5;
+    line-height: 2rem;
+    margin-left: $main-padding * 0.5;
+    margin-bottom: $main-padding * 0.5;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: 500;
+    }
+
+    @include tabletLandscapeAllOver {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.footer-zadzwon-button {
+  text-decoration: none;
+  padding: $main-padding;
+  color: inherit;
+  border: 1px solid $footer-main-color;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  transition: background-color 0.5s ease-in-out;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: lighten($footer-main-color, 10%);
+    color: darken($footer-main-color, 20%);
+  }
+}
+
+.zadzwon-list {
+  li {
+    margin-bottom: $main-padding * 4;
+    &:first-of-type {
+      margin-top: $main-padding * 3;
+    }
+    &:last-of-type {
+      margin-bottom: $main-padding * 3;
+    }
+  }
+}
+
+.city {
+  cursor: pointer;
+}

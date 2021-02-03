@@ -1,0 +1,174 @@
+.main-content {
+  @include tabletLandscape {
+    display: flex;
+    align-items: stretch;
+  }
+
+  @include tabletLandscapeAndMinHeight {
+    display: initial;
+  }
+
+  @include desktop {
+    display: flex;
+    align-items: stretch;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: $main-padding * 2.5;
+    position: relative;
+    height: 90vh;
+    flex: 1;
+
+    @include tabletLandscapeAndMinHeight {
+      height: 200px;
+      flex-direction: initial;
+    }
+
+    div {
+      text-align: center;
+      width: 80%;
+    }
+
+    hr {
+      border: none;
+      margin-top: $main-padding;
+      height: 1px;
+      width: 100%;
+
+      @include box-shadow;
+    }
+  }
+
+  h1,
+  h2 {
+    font-size: 2.2rem;
+    color: $main-background-color;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    z-index: 2;
+
+    @include text-shadow;
+
+    @include tabletLandscape {
+      display: flex;
+      align-items: center;
+      height: 30%;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    line-height: 1.2rem;
+    margin-top: 0.5rem;
+    padding-right: $main-padding * 1.5;
+    color: $main-background-color;
+    text-shadow: 0px 5px 9px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+
+  @include tabletLandscapeAndMinHeight {
+    justify-content: center;
+    flex: 2;
+  }
+}
+
+.main-content {
+  //wywóz
+  .wywoz {
+    background-color: lighten($second-main-color, 20%);
+    background-blend-mode: multiply;
+    background-image: linear-gradient(
+      transparent,
+      lighten($second-main-color, 20%)
+    );
+
+    &:after {
+      content: "";
+      background: url("https://raw.githubusercontent.com/psikos/zietek-www/master/assets/icon-septic.png");
+      // background: url("../../assets/icon-septic.png");
+      background-size: 40vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.33;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    hr {
+      background-color: darken($second-main-color, 0%);
+    }
+  }
+  //skład opału
+  .sklad-opalu {
+    background-color: $third-main-color;
+    background-blend-mode: multiply;
+    background-image: linear-gradient(transparent, $third-main-color);
+
+    &:after {
+      content: "";
+      background: url("https://raw.githubusercontent.com/psikos/zietek-www/master/assets/icon-coal.png");
+      // background: url("../../assets/icon-coal.png");
+      background-size: 40vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.33;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    hr {
+      background-color: darken($third-main-color, 20%);
+    }
+  }
+  //mechanika
+  .mechanika {
+    background-color: $main-color;
+    background-blend-mode: multiply;
+    background-image: linear-gradient(transparent, $main-color);
+
+    &:after {
+      content: "";
+      background: url("https://raw.githubusercontent.com/psikos/zietek-www/master/assets/icon-mechanic.png");
+      // background: url("../../assets/icon-mechanic.png");
+      background-size: 40vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.33;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    hr {
+      background-color: darken($main-color, 20%);
+    }
+  }
+}
+
+.main {
+  padding-top: 10vh;
+}

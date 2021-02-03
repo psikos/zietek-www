@@ -1,0 +1,87 @@
+%hamburger {
+    width: 100%;
+    height: 3px;
+    background-color: $hamburger-color;
+    position: absolute;
+}
+
+.hamburger {
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    
+    transition: transform .3s .1s ease-in-out;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    @include tabletLandscape {
+        display: none;
+    }
+    @include desktop {
+        display: none;
+    }
+
+    @include noHighlight;
+}
+
+.hamburger-box {
+    width: 35px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    
+}
+
+.hamburger-inner {
+    @extend %hamburger;
+
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .1s .2s ease-in-out;
+
+    &::before,
+    &::after {
+        @extend %hamburger;
+
+        content: '';
+        left: 0;
+        transition: transform .2s .2s ease-in-out;
+    }
+
+    &::before {
+        top: -10px
+    }
+    &::after {
+        top: 10px
+    }
+
+}
+
+.hamburger-active {
+    transform: translateX(250px);
+    z-index: 11;
+}
+
+.hamburger-active .hamburger-inner {
+    background-color: transparent;
+}
+
+.hamburger-active .hamburger-inner::before {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-active .hamburger-inner::after {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+// .hamburger:active, {
+// .hamburger-active:active {
+//     border: none;
+// }

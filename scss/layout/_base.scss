@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $main-background-color;
+  min-width: 300px;
+}
+
+.container {
+  @include tabletLandscapeAllOver {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+section,
+article {
+  position: relative;
+}
+
+.menu-handler {
+  position: absolute;
+  top: -10vh;
+}

@@ -1,0 +1,250 @@
+.uslugi {
+  padding: $main-padding * 4 $main-padding * 2;
+}
+
+.article-image {
+  img {
+    object-fit: contain;
+    width: 100%;
+
+    @include tabletLandscapeAllOver {
+      padding-right: $main-padding;
+
+      &.sklad-image {
+        padding-right: 0;
+        padding-left: $main-padding;
+      }
+    }
+  }
+
+  @include tabletLandscape {
+    flex: 1;
+  }
+  @include desktop {
+    flex: 1;
+    margin-right: $main-padding;
+
+    &:nth-of-type(2) {
+      margin-right: 0;
+      margin-left: $main-padding;
+    }
+  }
+}
+
+.article-header {
+  margin-bottom: $main-padding * 2;
+  padding-left: $main-padding * 2;
+  padding-bottom: $main-padding / 2;
+  border-left: 7px solid lighten($second-main-color, 20%);
+}
+
+.wywoz-article h2 {
+  color: lighten($second-main-color, 20%);
+}
+.sklad-article h2 {
+  color: $third-main-color;
+}
+.mechanika-article h2 {
+  color: $main-color;
+}
+.sklad-article .article-header {
+  border-color: $third-main-color;
+  padding-bottom: initial;
+}
+.mechanika-article .article-header {
+  border-color: $main-color;
+  padding-bottom: initial;
+}
+
+.article-text {
+  h2 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    position: relative;
+    opacity: 70%;
+    display: inline;
+    text-align: left;
+
+    @include text-shadow2;
+  }
+
+  p {
+    text-align: justify;
+    font-weight: 300;
+    word-spacing: 0.1rem;
+    letter-spacing: 0.04rem;
+    line-height: 1.5rem;
+    opacity: 80%;
+    margin-bottom: $main-padding;
+    transition: line-height 1s;
+  }
+
+  h3 {
+    opacity: 60%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin-bottom: $main-padding * 0.1;
+    padding-left: $main-padding * 2;
+  }
+  ul.sklad-ul {
+    padding-left: $main-padding * 2;
+    margin-bottom: $main-padding;
+    li {
+      line-height: 2rem;
+      padding-left: $main-padding;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 80%;
+      border-top: 1px dotted lighten($third-main-color, 30%);
+      width: 80%;
+      border-width: 2px;
+    }
+
+    li::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: black; /* Change the color */
+      opacity: 60%;
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+      margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+  }
+
+  @include tabletLandscapeAllOver {
+    flex: 2;
+  }
+}
+
+article {
+  padding: $main-padding * 2;
+  margin-bottom: $main-padding * 5;
+  border-radius: 3px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include box-shadow2;
+
+  @include tabletLandscapeAllOver {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+
+    &:nth-child(2) {
+      flex-direction: initial;
+    }
+    &:nth-child(3) {
+      display: block;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  text-align: center;
+
+  td {
+    border-left: 1px solid lighten($second-main-color, 20%);
+
+    &:first-of-type {
+      border-left: none;
+    }
+  }
+
+  sup {
+    vertical-align: super;
+    font-size: 70%;
+  }
+}
+
+.wywoz-article {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-main {
+    align-self: center;
+  }
+
+  @include tabletLandscapeAllOver {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "grid1 gridmain gridmain"
+      "grid2 gridmain gridmain"
+      "grid3 gridmain gridmain"
+      // "grid4 gridmain gridmain"
+      "grid4 grid5 grid7";
+  }
+
+  p {
+    @include desktop {
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.grid-main {
+  grid-area: gridmain;
+}
+
+@for $i from 1 through 7 {
+  .grid#{$i} {
+    grid-area: grid#{$i};
+  }
+}
+
+.mechanika-article,
+.wywoz-article {
+  padding: 0;
+
+  .article-text {
+    padding: $main-padding * 2;
+  }
+}
+
+.mechanika-article ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  background: url("https://raw.githubusercontent.com/psikos/zietek-www/master/assets/mechanic2.jpg")
+    rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  padding: $main-padding $main-padding $main-padding * 0.5;
+
+  li {
+    font-weight: 300;
+    border: 1px solid $main-color;
+    padding: $main-padding * 0.5 $main-padding;
+    line-height: 2rem;
+    color: white;
+    margin-left: $main-padding * 0.5;
+    margin-bottom: $main-padding * 0.5;
+    background-color: lighten($main-color, 0%);
+    opacity: 80%;
+
+    &:hover {
+      opacity: 100%;
+      font-weight: 400;
+    }
+  }
+}
+
+.mechanika-article .article-text {
+  padding-bottom: $main-padding / 2;
+}
+
+.article-text .article-header h2 {
+  @include smallMobile {
+    font-size: 2.8rem;
+  }
+}

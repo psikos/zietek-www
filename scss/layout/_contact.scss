@@ -1,0 +1,158 @@
+.contact-text {
+  p {
+    border-left: 5px solid $fourth-main-color;
+    padding-left: $main-padding;
+  }
+
+  @include tabletLandscapeAllOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.contact-text-text,
+.form {
+  flex: 1;
+}
+
+.contact-text-text {
+  align-self: flex-start;
+  padding: $main-padding * 3 $main-padding;
+}
+
+.phones {
+  margin-top: $main-padding * 2;
+  line-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    font-size: 1.6rem;
+    display: inline-block;
+
+    color: $third-main-color;
+  }
+  a {
+    display: inline-block;
+    background-color: $fourth-main-color;
+    color: $main-background-color;
+    border: none;
+    padding: $main-padding / 2 $main-padding;
+    letter-spacing: 0;
+    &:hover {
+      background-color: darken($fourth-main-color, 20%);
+      color: $main-background-color;
+    }
+  }
+}
+
+.about.contact {
+  padding: 0;
+}
+
+.about-text.contact-text {
+  margin-right: 0;
+}
+
+//formularz:
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  margin: $main-padding * 2 0;
+  padding: $main-padding * 2;
+  width: 90%;
+
+  @include box-shadow;
+
+  @include tabletLandscape {
+    width: 100%;
+  }
+}
+
+label {
+  color: lighten($fourth-main-color, 20%);
+  margin-left: $main-padding;
+  font-size: 1.2rem;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+  padding: $main-padding;
+  display: block;
+  width: 100%;
+  margin-top: $main-padding / 2;
+  margin-bottom: $main-padding;
+
+  @include box-shadow;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  -moz-appearance: textfield;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]::-webkit-outer-spin-button,
+input[type="text"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus,
+input:focus {
+  border-color: transparent !important;
+}
+
+.submit {
+  margin-top: $main-padding;
+  background-color: $fourth-main-color;
+  color: $main-background-color;
+  border: none;
+  font-size: 1.5rem;
+  padding: $main-padding $main-padding * 2;
+  letter-spacing: 0;
+  &:hover {
+    background-color: darken($fourth-main-color, 20%);
+    color: $main-background-color;
+  }
+}
+
+.status {
+  color: $third-main-color;
+  display: inline;
+  margin-left: $main-padding;
+}
+
+// input:focus::-webkit-input-placeholder { color:transparent; }
+// input:focus:-moz-placeholder { color:transparent; }
+// input:focus::-moz-placeholder { color:transparent; }
+// input:focus:-ms-input-placeholder { color:transparent; }
+
+// textarea:focus::-webkit-input-placeholder { color:transparent; }
+// textarea:focus:-moz-placeholder { color:transparent; }
+// textarea:focus::-moz-placeholder { color:transparent; }
+// textarea:focus:-ms-input-placeholder { color:transparent; }
+
+// input::-webkit-input-placeholder {color: #cccccc;}
+// input:-moz-placeholder {color: #cccccc;}
+// input::-moz-placeholder {color: #cccccc;}
+// input:-ms-input-placeholder {color: #cccccc;}
+
+// textarea::-webkit-input-placeholder {color: #cccccc;}
+// textarea:-moz-placeholder {color: #cccccc;}
+// textarea::-moz-placeholder {color: #cccccc;}
+// textarea:-ms-input-placeholder {color: #cccccc;}

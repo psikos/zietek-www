@@ -1,0 +1,23 @@
+html {
+    font-size: 12px;
+
+    @include largeMobile {
+        font-size: 12px;
+    }
+
+    @include tabletLandscape {
+        font-size: 14px;
+    }
+
+    @include desktop {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+strong {
+    font-weight: bold;
+}
